@@ -6,4 +6,8 @@ public interface IPedidoClienteDTO {
     int getCliente_id();
     String getNome();
     String getTelefone();
+    int getProduto_id();
+    String getNome_produto();
+    String getDescricao_produto();
+    double getValor_produto();
 }

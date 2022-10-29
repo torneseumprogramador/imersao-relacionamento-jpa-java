@@ -1,11 +1,14 @@
 package br.com.didox.relacionamento.models;
 
+import java.util.Set;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -46,5 +49,14 @@ public class Pedido {
         this.cliente = cliente;
     }
 
-    
+    @ManyToMany
+    private Set<Produto> produtos;
+
+    public void setProdutos(Set<Produto> produtos) {
+        this.produtos = produtos;
+    }
+
+    public Set<Produto> getProdutos() {
+        return this.produtos;
+    }
 }
